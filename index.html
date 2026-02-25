@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Tシャツリメイクアプリ</title>
+</head>
+
+<body>
+
+<h1>Tシャツリメイク診断</h1>
+
+<p>なにに生まれ変わらせたい？</p>
+
+<select id="remake">
+  <option value="">選んでね</option>
+  <option value="album">アルバム</option>
+  <option value="key">キーホルダー</option>
+  <option value="frame">額に入れる</option>
+</select>
+
+<br><br>
+
+<!-- ここにイメージ図を表示 -->
+<div id="imageArea"></div>
+
+<br>
+
+<button onclick="showHow()">作り方を見る</button>
+
+<p id="howTo"></p>
+
+<script>
+function showHow(){
+
+  let remake =
+  document.getElementById("remake").value;
+
+  let imageArea =
+  document.getElementById("imageArea");
+
+  let howTo =
+  document.getElementById("howTo");
+
+  if(remake == "album"){
+    imageArea.innerHTML =
+    "【ここにアルバムのイメージ図が入るよ】";
+    howTo.innerHTML =
+    "①Tシャツをカットする ②厚紙に貼る ③アルバムに固定する";
+  }
+
+  else if(remake == "key"){
+    imageArea.innerHTML =
+    "【ここにキーホルダーのイメージ図が入るよ】";
+    howTo.innerHTML =
+    "①小さく切る ②裏に補強布を貼る ③キーホルダーパーツをつける";
+  }
+
+  else if(remake == "frame"){
+    imageArea.innerHTML =
+    "【ここに額装のイメージ図が入るよ】";
+    howTo.innerHTML =
+    "①ロゴ部分を切り取る ②アイロンで整える ③額に入れる";
+  }
+
+}
+</script>
+
+</body>
+</html>
