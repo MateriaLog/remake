@@ -2,12 +2,67 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Tシャツリメイクアプリ</title>
+<title>Tシャツ リメイクラボ</title>
+
+<style>
+body {
+  background-color: #f5f1e8;
+  font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+  text-align: center;
+  padding: 40px;
+  color: #5c5c5c;
+}
+
+h1 {
+  color: #6b8e23;
+  margin-bottom: 20px;
+}
+
+select {
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 12px;
+  border: 1px solid #c8bfae;
+  background-color: #ffffff;
+  margin: 10px;
+}
+
+button {
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 20px;
+  border: none;
+  background-color: #a8c686;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #6b8e23;
+}
+
+#imageArea {
+  margin-top: 25px;
+  padding: 15px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#howTo {
+  margin-top: 20px;
+  line-height: 1.8;
+}
+</style>
+
 </head>
 
 <body>
 
-<h1>Tシャツリメイク診断</h1>
+<h1>🌿 Tシャツ リメイクラボ 🌿</h1>
 
 <p>なにに生まれ変わらせたい？</p>
 
@@ -18,50 +73,49 @@
   <option value="frame">額に入れる</option>
 </select>
 
-<br><br>
-
-<!-- ここにイメージ図を表示 -->
-<div id="imageArea"></div>
-
 <br>
 
 <button onclick="showHow()">作り方を見る</button>
+
+<div id="imageArea"></div>
 
 <p id="howTo"></p>
 
 <script>
 function showHow(){
 
-  let remake =
-  document.getElementById("remake").value;
-
-  let imageArea =
-  document.getElementById("imageArea");
-
-  let howTo =
-  document.getElementById("howTo");
+  let remake = document.getElementById("remake").value;
+  let imageArea = document.getElementById("imageArea");
+  let howTo = document.getElementById("howTo");
 
   if(remake == "album"){
-    imageArea.innerHTML =
-    "【ここにアルバムのイメージ図が入るよ】";
+    imageArea.innerHTML = "🌿 アルバムにリメイクするイメージ 🌿";
     howTo.innerHTML =
-    "①Tシャツをカットする ②厚紙に貼る ③アルバムに固定する";
+    "① Tシャツの使いたい部分をカットする<br>" +
+    "② 厚紙に貼って補強する<br>" +
+    "③ アルバムの表紙やページに固定する";
   }
 
   else if(remake == "key"){
-    imageArea.innerHTML =
-    "【ここにキーホルダーのイメージ図が入るよ】";
+    imageArea.innerHTML = "🌿 キーホルダーにリメイクするイメージ 🌿";
     howTo.innerHTML =
-    "①小さく切る ②裏に補強布を貼る ③キーホルダーパーツをつける";
+    "① 小さくカットする<br>" +
+    "② 裏に補強布を貼る<br>" +
+    "③ キーホルダーパーツを取り付ける";
   }
 
   else if(remake == "frame"){
-    imageArea.innerHTML =
-    "【ここに額装のイメージ図が入るよ】";
+    imageArea.innerHTML = "🌿 額に入れて飾るイメージ 🌿";
     howTo.innerHTML =
-    "①ロゴ部分を切り取る ②アイロンで整える ③額に入れる";
+    "① ロゴや思い出部分を切り取る<br>" +
+    "② アイロンで整える<br>" +
+    "③ 額に入れて完成！";
   }
 
+  else{
+    imageArea.innerHTML = "";
+    howTo.innerHTML = "";
+  }
 }
 </script>
 
